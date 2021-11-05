@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>2 Player Rock Papers Scissors Showdown!</h1>
+<section class='game_window'>
+    <section class='player_choice_window'>
+        <form action="/player1"  method='POST'>
+            <label for="name">Name</label>
+            <input type="text" name='name' id='name'>
+            <label for="choice">Choose your weapon!</label>
+            <select id='choice' name='choice'>
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+            </select>
+            <input type='submit' id='submit'>
+        </form>
+    </section>
+
+    <section class='player_choice_window' method='POST'>
+        <form action="/player2" method='POST'>
+            <label for="name">Name</label>
+            <input type="text" name='name' id='name'>
+            <label for="choice">Choose your weapon!</label>
+            <select id='choice' name='choice'>
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+            </select>
+            <input type='submit' id='submit'>
+        </form>
+    </section>
+</section>
+
+{% if player1 %}
+<section class='player_ready_window'>
+    <h3>{{player1.name}}</h3>
+    <p>{{player1.choice}}</p>
+</section>
+{% endif %}
+
+{% if player2%}
+<section class='player_ready_window'>
+    <h3>{{player2.name}}</h3>
+    <p>{{player2.choice}}</p>
+</section>
+{% endif %}
+
+{% endblock %}
