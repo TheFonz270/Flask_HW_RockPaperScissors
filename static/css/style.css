@@ -14,7 +14,7 @@ main {
 
 
 nav {
-    background-image: linear-gradient(to right, #cc33ff, #ff0066);
+    background-color:#cc33ff;
     padding:4px 0px;
     display:block;
 
@@ -41,7 +41,7 @@ nav a {
     }
 
 nav a:hover {
-        background-image: linear-gradient(to right, #ff0066, #cc33ff)
+        background-color: #ff0066;
     }
 
 h1 {
@@ -49,9 +49,32 @@ h1 {
     padding-top:10px;
 }
 
+h2 {
+    margin:5px 0 10px;
+}
+
 footer {
     background-color:brown;
     padding:25px;
     text-align:center;
     color:#fff;
+}
+
+.game_window {
+    display:flex;
+    justify-content:space-evenly;
+    
+}
+
+.player_choice_window form {
+    display:flex;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid brown;
+    border-radius: 25px;
+    padding:15px;
+}
+
+input, select {
+    margin:5px 0;
 }

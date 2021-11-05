@@ -6,6 +6,7 @@
 <section class='game_window'>
     <section class='player_choice_window'>
         <form action="/player1"  method='POST'>
+            <h2>Player 1</h2>
             <label for="name">Name</label>
             <input type="text" name='name' id='name'>
             <label for="choice">Choose your weapon!</label>
@@ -20,6 +21,7 @@
 
     <section class='player_choice_window' method='POST'>
         <form action="/player2" method='POST'>
+            <h2>Player 2</h2>
             <label for="name">Name</label>
             <input type="text" name='name' id='name'>
             <label for="choice">Choose your weapon!</label>
@@ -33,18 +35,11 @@
     </section>
 </section>
 
-{% if player1 %}
+{% for player in players %}
 <section class='player_ready_window'>
-    <h3>{{player1.name}}</h3>
-    <p>{{player1.choice}}</p>
+    <h3>{{player.name}}</h3>
+    <p>{{player.choice}}</p>
 </section>
-{% endif %}
-
-{% if player2%}
-<section class='player_ready_window'>
-    <h3>{{player2.name}}</h3>
-    <p>{{player2.choice}}</p>
-</section>
-{% endif %}
+{% endfor %}
 
 {% endblock %}
