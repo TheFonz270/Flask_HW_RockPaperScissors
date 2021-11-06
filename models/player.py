@@ -1,4 +1,6 @@
 players = []
+choice1 = "Rock"
+choice2 = "Rock"
 
 class Player():
     def __init__(self, name, choice):

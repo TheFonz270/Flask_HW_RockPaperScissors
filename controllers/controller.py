@@ -34,17 +34,17 @@ def player2():
 def showdown():
     return render_template('showdown.html')
 
-# @app.route('/<choice1>/<choice2>')
-@app.route('/Rock/Rock')
-@app.route('/Rock/Paper')
-@app.route('/Rock/Scissors')
-@app.route('/Paper/Rock')
-@app.route('/Paper/Paper')
-@app.route('/Paper/Scissors')
-@app.route('/Scissors/Rock')
-@app.route('/Scissors/Paper')
-@app.route('/Scissors/Scissors')
-def play_game():    
+@app.route('/<choice1>/<choice2>')
+# @app.route('/Rock/Rock')
+# @app.route('/Rock/Paper')
+# @app.route('/Rock/Scissors')
+# @app.route('/Paper/Rock')
+# @app.route('/Paper/Paper')
+# @app.route('/Paper/Scissors')
+# @app.route('/Scissors/Rock')
+# @app.route('/Scissors/Paper')
+# @app.route('/Scissors/Scissors')
+def index_game(choice1, choice2):    
     game = Game(players)
     result = game.play_game(players)
     if result == 1:
