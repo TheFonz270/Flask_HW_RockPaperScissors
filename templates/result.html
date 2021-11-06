@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Rock Papers Scissors Result!</h1>
+
+{% if result == 0 or result == 1 %}
+
+    <p>{{players[result].name}} Wins! with {{players[result].choice}} beating {{players[loser].choice}}</p>
+
+{% endif %}
+
+{% if result == "Tie" %}
+
+    <p>{{players[0].name}} and {{players[1].name}} Tie!</p>
+
+{% endif %}
+
+
+{% endblock %}

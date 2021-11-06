@@ -19,7 +19,7 @@
         </form>
     </section>
 
-    <section class='player_choice_window' method='POST'>
+    <section class='player_choice_window'>
         <form action="/player2" method='POST'>
             <h2>Player 2</h2>
             <label for="name">Name</label>
@@ -34,6 +34,12 @@
         </form>
     </section>
 </section>
+
+{% if players[1] %}
+<section>
+    <a href="/{{players[0].choice}}/{{players[1].choice}}" class="Play_button">SHOWDOWN!</a>
+</section>
+{% endif %}
 
 {% for player in players %}
 <section class='player_ready_window'>
