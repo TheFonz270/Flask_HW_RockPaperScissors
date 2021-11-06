@@ -7,10 +7,8 @@ class Player():
 
 
     def add_player_to_players(player):
-        if player in players:
-            for n in players:
-                if n == player:
-                    players.remove(n) 
-                    players.append(player)
+        if len(players) < 2:
+            players.append(player)
         else:
+            players.remove(players[0])
             players.append(player)
